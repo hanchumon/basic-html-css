@@ -3,6 +3,12 @@
   color: inherit;
 }
 
+/* 가상 요소 선택자  */
+::selection {
+  background: #373e6a;
+  color: #fff;
+}
+
  /* body선택자 */
 body {
   font-family: "SUIT";
@@ -18,6 +24,10 @@ body {
   text-shadow: 4px 4px 3px #77f;
 }
 
+.aline {
+  text-align: center;
+}
+
 ul.menu{
 	margin: 20px;
 	padding-left: 20px;
@@ -27,7 +37,46 @@ ul.menu{
 h1.menu{
   color: violet;
 }
-
+/* 아이디 선택자  */
 #demo {
   border: #00f 5px solid;
+}
+/* 속성 선택자 */
+.menu a[href$=".html"] {
+  background-color: bisque;
+}
+
+/* 선택자 목록 */
+.fancy, .menu{
+  font-size: 24px;
+}
+
+/* 가상요소 선택자 */
+.aline::before{
+  content: "이전 요소";
+}
+
+.aline::after{
+  content: "다음 요소";
+}
+
+/* 가상클래스  focus-within 자식이 부모요소 선택 */
+
+/* 가상클래스 (구조선택자)*/
+/* .menu li:nth-child(-n+2),
+.menu li:nth-child(n+7){
+  color: brown;
+} */
+
+.menu li:nth-child(odd) {
+  text-decoration: bold;
+}
+
+
+.menu a:hover {
+  border: 5px solid orange
+}
+
+.menu h1:focus{
+  background-color: teal;
 }
